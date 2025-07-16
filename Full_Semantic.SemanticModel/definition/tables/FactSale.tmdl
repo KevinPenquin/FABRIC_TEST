@@ -1,0 +1,56 @@
+table FactSale
+	lineageTag: 0fde49df-160b-4579-9a02-891532f21dc7
+	sourceLineageTag: [dbo].[FactSale]
+
+	column Brand_Code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 97542a0d-80a3-49ad-9158-8c7f59314352
+		sourceLineageTag: Brand_Code
+		summarizeBy: none
+		sourceColumn: Brand_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_CODE
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 17999397-3132-4e90-9f8a-9ce62f80ced3
+		sourceLineageTag: ID_CODE
+		summarizeBy: none
+		sourceColumn: ID_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4e99464d-4470-4e8e-9a06-87ea53ef287c
+		sourceLineageTag: DATE
+		summarizeBy: none
+		sourceColumn: DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SALES
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: ad27df11-c9cf-4711-8b5d-44db00fe5341
+		sourceLineageTag: SALES
+		summarizeBy: sum
+		sourceColumn: SALES
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactSale = entity
+		mode: directLake
+		source
+			entityName: FactSale
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

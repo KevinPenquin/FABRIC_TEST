@@ -1,0 +1,34 @@
+table DimBrand
+	lineageTag: 07f34be8-e7ca-48b2-ae63-53c956e31468
+	sourceLineageTag: [dbo].[DimBrand]
+
+	column Brand_Code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 6fb22085-3414-43f6-82ca-c55b57f0f21b
+		sourceLineageTag: Brand_Code
+		summarizeBy: none
+		sourceColumn: Brand_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Brand
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d03e09d4-dd9a-4b1d-bfd4-c0028b57dd52
+		sourceLineageTag: Brand
+		summarizeBy: none
+		sourceColumn: Brand
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimBrand = entity
+		mode: directLake
+		source
+			entityName: DimBrand
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,75 @@
+table DimPeople
+	lineageTag: 0d6549bb-227c-487f-8dfa-fccdac8552da
+	sourceLineageTag: [dbo].[DimPeople]
+
+	column ID_CODE
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 4a2bccc4-1f49-4822-8ed6-5b2084a120da
+		sourceLineageTag: ID_CODE
+		summarizeBy: none
+		sourceColumn: ID_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column HomeCode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 419ace56-6c23-4d3e-9c62-e7e36486a08c
+		sourceLineageTag: HomeCode
+		summarizeBy: none
+		sourceColumn: HomeCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIRST_NAME
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 04dbc17e-9c9c-4b83-afc8-d87a47dddc0c
+		sourceLineageTag: FIRST_NAME
+		summarizeBy: none
+		sourceColumn: FIRST_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column LAST_NAME
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ce3cf612-754a-4ebc-979a-ebe739c33799
+		sourceLineageTag: LAST_NAME
+		summarizeBy: none
+		sourceColumn: LAST_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column POSITION
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f038ed97-d28b-45df-ba36-37848e87c462
+		sourceLineageTag: POSITION
+		summarizeBy: none
+		sourceColumn: POSITION
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEPARTMENT
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f78bbfb4-f385-4cdd-9eca-a28431e9dcdf
+		sourceLineageTag: DEPARTMENT
+		summarizeBy: none
+		sourceColumn: DEPARTMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimPeople = entity
+		mode: directLake
+		source
+			entityName: DimPeople
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,4 @@
+relationship a43d38dc-3af7-7f83-8be2-9e834bccca66
+	fromColumn: FactSale.Brand_Code
+	toColumn: DimBrand.Brand_Code
+
