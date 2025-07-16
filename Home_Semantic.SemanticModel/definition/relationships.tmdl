@@ -1,0 +1,4 @@
+relationship 8a4e514c-ba6a-c4b0-41e6-12dac8ee401b
+	fromColumn: DimPeople.HomeCode
+	toColumn: DimHome.HomeCode
+

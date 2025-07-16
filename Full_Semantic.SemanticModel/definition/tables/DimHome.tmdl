@@ -1,0 +1,34 @@
+table DimHome
+	lineageTag: ad5765a9-0abf-4f2e-9481-2cc6962324d8
+	sourceLineageTag: [dbo].[DimHome]
+
+	column HomeCode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: b863a748-f8cd-4441-9fa4-5078d8855e27
+		sourceLineageTag: HomeCode
+		summarizeBy: none
+		sourceColumn: HomeCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column HomeType
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 31a2c8c3-b0c2-4578-9c6c-ff155cbea0a7
+		sourceLineageTag: HomeType
+		summarizeBy: none
+		sourceColumn: HomeType
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimHome = entity
+		mode: directLake
+		source
+			entityName: DimHome
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,8 @@
+relationship 16a0a1d6-c91b-3697-7c32-077d5e6e33ee
+	fromColumn: FactSale.Brand_Code
+	toColumn: DimBrand.Brand_Code
+
+relationship fa41dc2c-7721-f592-ea51-db874bbfa4b2
+	fromColumn: FactSale.ID_CODE
+	toColumn: DimPeople.ID_CODE
+

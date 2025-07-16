@@ -1,11 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Warehouse",
-    "displayName": "SampleWarehouse"
+    "type": "SemanticModel",
+    "displayName": "Sale_Semantic"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "9be6dc74-1143-9830-4bbe-d1e3713adf73"
+    "logicalId": "d99a184a-ea6d-8d90-4313-880aca0c004d"
   }
 }
